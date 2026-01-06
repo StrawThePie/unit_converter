@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All-in-One Unit Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>All-in-One Unit Converter</h1>
+
+    <!-- Length Converter -->
+    <h2>Length</h2>
+    <form method="post">
+        <input type="hidden" name="converter" value="length">
+        <div class="form-row">
+            <label>Value:</label>
+            <input type="number" name="value" required>
+            <label>From:</label>
+            <select name="from_unit">
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inch">Inch</option>
+                <option value="foot">Foot</option>
+                <option value="yard">Yard</option>
+                <option value="mile">Mile</option>
+            </select>
+            <label>To:</label>
+            <select name="to_unit">
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inch">Inch</option>
+                <option value="foot">Foot</option>
+                <option value="yard">Yard</option>
+                <option value="mile">Mile</option>
+            </select>
+        </div>
+        <div class="button-row">
+            <button type="submit">Convert Length</button>
+        </div>
+    </form>
+    {% if length_result is not none %}
+        <strong>Converted Value:</strong> {{ length_result }}
+    {% endif %}
+
+    <!-- Weight Converter -->
+    <h2>Weight</h2>
+    <form method="post">
+        <input type="hidden" name="converter" value="weight">
+        <div class="form-row">
+            <label>Value:</label>
+            <input type="number" name="value" required>
+            <label>From:</label>
+            <select name="from_unit">
+                <option value="milligram">Milligram</option>
+                <option value="gram">Gram</option>
+                <option value="kilogram">Kilogram</option>
+                <option value="ounce">Ounce</option>
+                <option value="pound">Pound</option>
+            </select>
+            <label>To:</label>
+            <select name="to_unit">
+                <option value="milligram">Milligram</option>
+                <option value="gram">Gram</option>
+                <option value="kilogram">Kilogram</option>
+                <option value="ounce">Ounce</option>
+                <option value="pound">Pound</option>
+            </select>
+        </div>
+        <div class="button-row">
+            <button type="submit">Convert Weight</button>
+        </div>
+    </form>
+    {% if weight_result is not none %}
+        <strong>Converted Value:</strong> {{ weight_result }}
+    {% endif %}
+
+    <!-- Temperature Converter -->
+    <h2>Temperature</h2>
+    <form method="post">
+        <input type="hidden" name="converter" value="temperature">
+        <div class="form-row">
+            <label>Value:</label>
+            <input type="number" name="value" required>
+            <label>From:</label>
+            <select name="from_unit">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <label>To:</label>
+            <select name="to_unit">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+        </div>
+        <div class="button-row">
+            <button type="submit">Convert Temperature</button>
+        </div>
+    </form>
+    {% if temperature_result is not none %}
+        <strong>Converted Value:</strong> {{ temperature_result }}
+    {% endif %}
+</body>
+</html>
