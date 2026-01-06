@@ -50,7 +50,7 @@ ___
 
 1. Clone the repository:
     ```text
-    git clone <YOUR_REPO_URL>
+    git clone <https://github.com/StrawThePie/unit_converter>
     cd unit_converter
     ```
    
